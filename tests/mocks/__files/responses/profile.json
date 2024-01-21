@@ -1,0 +1,17 @@
+{
+  "profile": {
+    "email": "udy@test.com",
+    "products": [
+      {
+        "type": "iPad",
+        "productDetails": [
+          {
+            "generation": "4",
+            "version": "17.2",
+            "status": "Confirmed"
+          }
+        ]
+      }
+    ]
+  }
+}

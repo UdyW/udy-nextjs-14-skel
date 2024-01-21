@@ -1,0 +1,25 @@
+version: '2.1'
+
+services:
+  node:
+    image: 'node:20'
+    user: 'node'
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/home/node/app
+    command: 'npm start'
+
+  npm:
+    extends:
+      service: node
+    entrypoint: npm
+
+  wiremock:
+    image: 'wiremock/wiremock:latest'
+    volumes:
+      - ./tests/mocks:/home/wiremock
+    expose:
+      - 8080
+    command: --global-response-templating --disable-banner

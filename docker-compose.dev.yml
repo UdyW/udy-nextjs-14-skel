@@ -1,0 +1,32 @@
+version: '2.1'
+
+services:
+  app:
+    extends:
+      file: docker-compose.build.yml
+      service: npm
+    command: run dev
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    links:
+      - wiremock
+    env_file:
+      - .env.dev
+    depends_on:
+      - wiremock
+
+  wiremock:
+    extends:
+      file: docker-compose.build.yml
+      service: wiremock
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+
+  npm:
+    extends:
+      file: docker-compose.build.yml
+      service: npm

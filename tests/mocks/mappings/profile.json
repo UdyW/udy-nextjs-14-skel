@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/my/profile"
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 500,
+    "bodyFileName": "responses/profile.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
